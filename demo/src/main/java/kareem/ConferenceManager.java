@@ -1,5 +1,4 @@
 package kareem;
-
 import java.util.List;
 
 public class ConferenceManager {
@@ -7,10 +6,14 @@ public class ConferenceManager {
     private String name;
     private String email;
 
+
     public ConferenceManager(String managerID, String name, String email) {
         this.managerID = managerID;
         this.name = name;
         this.email = email;
+    }
+    public String getName() {
+        return name;
     }
 
     public void setupConference(Conference conference) {
@@ -26,8 +29,6 @@ public class ConferenceManager {
     }
 
     public List<String> generateReports() {
-        // Generate and return reports
         return List.of("Report1", "Report2");
     }
 }
-

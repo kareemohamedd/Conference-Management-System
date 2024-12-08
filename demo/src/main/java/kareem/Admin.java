@@ -3,27 +3,35 @@ package kareem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Admin {
+import javafx.scene.control.TextArea;
+
+import java.util.Date;
+
+public class Admin extends User {
     private String adminID;
-    private String name;
-    private String email;
     private List<Attendee> attendees;
+    private Conference conference;
 
     public Admin(String adminID, String name, String email) {
+        super(name, email);
         this.adminID = adminID;
-        this.name = name;
-        this.email = email;
         this.attendees = new ArrayList<>();
+        
+    }
+    public boolean checkEmail(String email,String id){
+        return (email.equals(this.email) && id.equals(this.adminID));
+    }
+    public Conference createConference(String name, Date startDate, Date endDate,TextArea logArea) {
+        conference = new Conference(name, startDate, endDate,logArea);
+        return conference;
     }
 
-    public void addUser(Attendee user) {
-        attendees.add(user);
-        System.out.println("User added: " + user.getName());
+    public void addUser(String name, String email)  {
+        conference.registerAttendee(name, email);
     }
 
     public void removeUser(Attendee user) {
-        attendees.remove(user);
-        System.out.println("User removed: " + user.getName());
+        conference.removeAttendee(user);;
     }
 
     public String viewAnalytics() {

@@ -32,7 +32,7 @@ public class Session {
 
     public String getDetails() {
         // Return session details
-        return name + " at " + time + " in room " + room;
+        return name + " at " + time + " in room " + room +"on"+ date;
     }
 
     public int getAttendeeCount() {
@@ -42,6 +42,12 @@ public class Session {
 
     public String getSessionID() {
         return sessionID;
+    }
+    public void setSpeaker(Speaker speakerID) {
+        this.speaker = speakerID;
+    }
+    public Speaker getSpeaker() {
+        return speaker;
     }
 }
 
