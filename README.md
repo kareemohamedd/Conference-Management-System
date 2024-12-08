@@ -1,7 +1,3 @@
-Here is a revised and more professional version of your README file:
-
----
-
 # **Conference Management System**
 
 ## **Overview**
